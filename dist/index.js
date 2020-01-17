@@ -309,7 +309,7 @@ var _defaults = {
   cssProp: 'min-height',
   iconArrow: '&#8675;',
   iconRefreshing: '&hellip;',
-  instructionsPullToRefresh: 'Pull down to refresh',
+  instructionsPullToRefresh: 'Pull down to refresheee',
   instructionsReleaseToRefresh: 'Release to refresh',
   instructionsRefreshing: 'Refreshing',
   refreshTimeout: 500,

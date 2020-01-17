@@ -16,7 +16,6 @@ export default `
 }
 
 .__PREFIX__box {
-  padding: 10px;
   flex-basis: 100%;
 }
 

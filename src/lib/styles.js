@@ -1,6 +1,6 @@
 export default `
 .__PREFIX__ptr {
-  box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px 5px -1px rgba(0, 0, 0, 0.12);
   pointer-events: none;
   font-size: 0.85em;
   font-weight: bold;
@@ -16,6 +16,7 @@ export default `
 }
 
 .__PREFIX__box {
+  padding: 10px;
   flex-basis: 100%;
 }
 

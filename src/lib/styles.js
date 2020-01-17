@@ -15,6 +15,10 @@ export default `
   align-content: stretch;
 }
 
+.__PREFIX__ptr.__PREFIX__refresh {
+  align-items: center;
+}
+
 .__PREFIX__box {
   padding: 10px;
   flex-basis: 100%;
@@ -32,6 +36,7 @@ export default `
 .__PREFIX__icon {
   color: rgba(0, 0, 0, 0.3);
   transition: transform .3s;
+  animation: 5s linear .35s infinite rotate;
 }
 
 /*
@@ -45,4 +50,21 @@ listeners can take over.
 .__PREFIX__release .__PREFIX__icon {
   transform: rotate(180deg);
 }
+
+.__PREFIX__refresh .__PREFIX__icon {
+  animation: 1s linear infinite rotate;
+}
+
+
+@keyframes rotate {
+  0% {
+  transform: rotate(0deg);
+  }
+  
+  100% {
+  transform: rotate(360deg);
+  }
+}
+
+  
 `;

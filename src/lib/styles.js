@@ -13,6 +13,7 @@ export default `
   display: flex;
   align-items: flex-end;
   align-content: stretch;
+  background: #f2f2f2;
 }
 
 .__PREFIX__ptr.__PREFIX__refresh {
@@ -35,8 +36,18 @@ export default `
 
 .__PREFIX__icon {
   color: rgba(0, 0, 0, 0.3);
-  transition: transform .3s;
-  animation: 5s linear .35s infinite rotate;
+  animation-name: rotate, fadeIn;
+  animation-duration: 3s, 3s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: linear, linear;
+  animation-play-state: running, running;
+  
+}
+
+.__PREFIX__icon i {
+  background: white;
+  padding: 6px;
+  border-radius: 100%;
 }
 
 /*
@@ -48,13 +59,24 @@ listeners can take over.
 }
 
 .__PREFIX__release .__PREFIX__icon {
-  transform: rotate(180deg);
+  animation-play-state: running, paused;
 }
+
 
 .__PREFIX__refresh .__PREFIX__icon {
-  animation: 1s linear infinite rotate;
+  animation: 0.6s linear infinite rotate;
 }
 
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }  
+  
+  100% {
+    opacity: 100;
+  }
+}
 
 @keyframes rotate {
   0% {
@@ -66,5 +88,43 @@ listeners can take over.
   }
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245,122,0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(245,122,0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245,122,0, 0.4);
+  }
+}
+
+@keyframes releaseMe2 {
+  0% {
+    transform: rotate(-10deg);
+  }
   
+  50% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+ @keyframes releaseMe {
+  0% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform:  translateY(10);
+  }
+
+  100% {
+    transform:  translateY(0);
+  }
+}
 `;

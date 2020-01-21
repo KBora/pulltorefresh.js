@@ -48,7 +48,7 @@ function onReset(handler) {
       handler.ptrElement = null;
     }
 
-    // reset state
+    // reset stater
     _shared.state = 'pending';
   }, handler.refreshTimeout);
 }

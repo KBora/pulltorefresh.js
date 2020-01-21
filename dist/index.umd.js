@@ -76,7 +76,7 @@
       if (handler.ptrElement && handler.ptrElement.parentNode) {
         handler.ptrElement.parentNode.removeChild(handler.ptrElement);
         handler.ptrElement = null;
-      } // reset state
+      } // reset stater
 
 
       _shared.state = 'pending';
@@ -304,10 +304,10 @@
 
   var _ptrMarkup = "\n<div class=\"__PREFIX__box\">\n  <div class=\"__PREFIX__content\">\n    <div class=\"__PREFIX__icon\"></div>\n  </div>\n</div>\n";
 
-  var _ptrStyles = "\n.__PREFIX__ptr {\n  box-shadow: inset 0 -1px 5px -1px rgba(0, 0, 0, 0.12);\n  pointer-events: none;\n  font-size: 0.85em;\n  font-weight: bold;\n  top: 0;\n  height: 0;\n  transition: height 0.3s, min-height 0.3s;\n  text-align: center;\n  width: 100%;\n  overflow: hidden;\n  display: flex;\n  align-items: flex-end;\n  align-content: stretch;\n}\n\n.__PREFIX__ptr.__PREFIX__refresh {\n  align-items: center;\n}\n\n.__PREFIX__box {\n  padding: 10px;\n  flex-basis: 100%;\n}\n\n.__PREFIX__pull {\n  transition: none;\n}\n\n.__PREFIX__text {\n  margin-top: .33em;\n  color: rgba(0, 0, 0, 0.3);\n}\n\n.__PREFIX__icon {\n  color: rgba(0, 0, 0, 0.3);\n  transition: transform .3s;\n  animation: 5s linear .35s infinite rotate;\n}\n\n/*\nWhen at the top of the page, disable vertical overscroll so passive touch\nlisteners can take over.\n*/\n.__PREFIX__top {\n  touch-action: pan-x pan-down pinch-zoom;\n}\n\n.__PREFIX__release .__PREFIX__icon {\n  transform: rotate(180deg);\n}\n\n.__PREFIX__refresh .__PREFIX__icon {\n  animation: 1s linear infinite rotate;\n}\n\n\n@keyframes rotate {\n  0% {\n  transform: rotate(0deg);\n  }\n  \n  100% {\n  transform: rotate(360deg);\n  }\n}\n\n  \n";
+  var _ptrStyles = "\n.__PREFIX__ptr {\n  box-shadow: inset 0 -1px 5px -1px rgba(0, 0, 0, 0.12);\n  pointer-events: none;\n  font-size: 0.85em;\n  font-weight: bold;\n  top: 0;\n  height: 0;\n  transition: height 0.3s, min-height 0.3s;\n  text-align: center;\n  width: 100%;\n  overflow: hidden;\n  display: flex;\n  align-items: flex-end;\n  align-content: stretch;\n  background: #f2f2f2;\n}\n\n.__PREFIX__ptr.__PREFIX__refresh {\n  align-items: center;\n}\n\n.__PREFIX__box {\n  padding: 10px;\n  flex-basis: 100%;\n}\n\n.__PREFIX__pull {\n  transition: none;\n}\n\n.__PREFIX__text {\n  margin-top: .33em;\n  color: rgba(0, 0, 0, 0.3);\n}\n\n.__PREFIX__icon {\n  color: rgba(0, 0, 0, 0.3);\n  animation-name: rotate, fadeIn;\n  animation-duration: 3s, 3s;\n  animation-iteration-count: infinite, 1;\n  animation-timing-function: linear, linear;\n  animation-play-state: running, running;\n  \n}\n\n.__PREFIX__icon i {\n  background: white;\n  padding: 6px;\n  border-radius: 100%;\n}\n\n/*\nWhen at the top of the page, disable vertical overscroll so passive touch\nlisteners can take over.\n*/\n.__PREFIX__top {\n  touch-action: pan-x pan-down pinch-zoom;\n}\n\n.__PREFIX__release .__PREFIX__icon {\n  animation-play-state: running, paused;\n}\n\n\n.__PREFIX__refresh .__PREFIX__icon {\n  animation: 0.6s linear infinite rotate;\n}\n\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }  \n  \n  100% {\n    opacity: 100;\n  }\n}\n\n@keyframes rotate {\n  0% {\n  transform: rotate(0deg);\n  }\n  \n  100% {\n  transform: rotate(360deg);\n  }\n}\n\n@keyframes pulse {\n  0% {\n    box-shadow: 0 0 0 0 rgba(245,122,0, 0.4);\n  }\n  50% {\n    box-shadow: 0 0 0 8px rgba(245,122,0, 0);\n  }\n  100% {\n    box-shadow: 0 0 0 0 rgba(245,122,0, 0.4);\n  }\n}\n\n@keyframes releaseMe2 {\n  0% {\n    transform: rotate(-10deg);\n  }\n  \n  50% {\n    transform: rotate(45deg);\n  }\n\n  100% {\n    transform: rotate(-10deg);\n  }\n}\n\n @keyframes releaseMe {\n  0% {\n    transform: translateY(0);\n  }\n  \n  50% {\n    transform:  translateY(10);\n  }\n\n  100% {\n    transform:  translateY(0);\n  }\n}\n";
 
   var _defaults = {
-    distThreshold: 60,
+    distThreshold: 78,
     distMax: 80,
     distReload: 50,
     distIgnore: 0,
@@ -316,8 +316,8 @@
     ptrElement: '.ptr',
     classPrefix: 'ptr--',
     cssProp: 'min-height',
-    iconArrow: '<i class="fa-redo far fas has-text-primary"></i>',
-    iconRefreshing: '<icon class="rds-icon icon-rds-points has-text-primary"></icon>',
+    iconArrow: '<i>O</i>',
+    iconRefreshing: '<i>X</i>',
     instructionsPullToRefresh: 'Pull down to refresheee',
     instructionsReleaseToRefresh: 'Release to refreshooo',
     instructionsRefreshing: 'Refreshingaaa',
